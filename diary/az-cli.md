@@ -1,4 +1,4 @@
-## Some common az cli commands
+## AZ cli
 
 ### List of your subscrptions
 ```
