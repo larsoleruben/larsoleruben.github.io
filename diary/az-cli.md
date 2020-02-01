@@ -28,5 +28,6 @@ az container show --resource-group My-Resource-Group --name My-Container-Group-n
 ### List resource groups in a subscription
 ```
 az group list [--subscription]
-              [--tag]```
+              [--tag]
+```
 
