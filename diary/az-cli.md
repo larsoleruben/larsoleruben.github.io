@@ -24,3 +24,9 @@ az container exec --resource-group My-Resource-Group --name My-Container-Group-n
 ```
 az container show --resource-group My-Resource-Group --name My-Container-Group-name --output table
 ```
+
+### List resource groups in a subscription
+´´´
+az group list [--subscription]
+              [--tag]
+
