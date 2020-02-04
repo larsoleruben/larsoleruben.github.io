@@ -6,7 +6,7 @@ az account list --output table
 ```
 ### Set current suscription
 ```
-account set --subscription "My Subscription"
+az account set --subscription "My Subscription"
 ```
 ### Create container instance group from yaml file
 ```
