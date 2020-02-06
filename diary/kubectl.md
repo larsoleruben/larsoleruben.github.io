@@ -39,7 +39,7 @@ kubectl api-resources --namespaced=true
 kubectl api-resources --namespaced=false
 ```
 
-### All context commands, meaning kubectl config .....and then:
+### All config commands, meaning kubectl config .....and then:
 ```bash
 current-context Displays the current-context
 delete-cluster  Delete the specified cluster from the kubeconfig
