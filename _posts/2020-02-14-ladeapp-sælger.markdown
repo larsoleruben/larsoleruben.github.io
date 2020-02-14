@@ -5,4 +5,4 @@ Fra jeg solge ganske få udgaver af min lille [ladeapp.dk](http://ladeapp.dk) (d
 På denne app er alle ladesteandere fra EON, Clever og Ionity synlige på den samme app.  
 Hent den nu i app store hos apple!  
 
-![alt text](./iPhone.png)
+![alt text]({{ site.url }}/assets/iPhone.png)
