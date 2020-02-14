@@ -8,6 +8,6 @@ PARSE ( string_value AS data_type [ USING culture ] )
 ```
 ### Get duplicates or all equal entries of the same value
 ```sql
-select count(*), myCol from [dbo].[upload]
+select count(*), myCol from [dbo].[myTable]
   group by myCol having COUNT(*) > 1 --For duplicates
 ```
