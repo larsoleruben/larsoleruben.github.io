@@ -11,3 +11,8 @@ PARSE ( string_value AS data_type [ USING culture ] )
 select count(*), myCol from [dbo].[myTable]
   group by myCol having COUNT(*) > 1 --For duplicates
 ```
+
+### Move table from one schema to antoher (change ownership)
+```sql
+ALTER SCHEMA HumanResources TRANSFER Person.Address;  
+```
