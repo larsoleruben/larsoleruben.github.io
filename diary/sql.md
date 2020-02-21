@@ -4,7 +4,9 @@
 ### Parse dates
 ```sql
 --culture could be  'en-GB'
-PARSE ( string_value AS data_type [ USING culture ] )  
+PARSE ( string_value AS data_type [ USING culture ] )
+-- or you can even parse a month and year only, defaulting to the 1st at 00:00:00
+select PARSE('feb-2018' as datetime USING 'en-UK')
 ```
 ### Get duplicates or all equal entries of the same value
 ```sql
