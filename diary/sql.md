@@ -54,6 +54,15 @@ CREATE TABLE Production.TransactionHistoryArchive1
    )
 ;
 ```
+### Modify column’s data type
+```sql
+ALTER TABLE table_name 
+ALTER COLUMN column_name new_data_type(size);
+```
+
+
+
+
 ### Granting INSERT permission on schema HumanResources to guest
 ```sql
 GRANT INSERT ON SCHEMA :: HumanResources TO guest;
