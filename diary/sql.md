@@ -71,3 +71,22 @@ GRANT INSERT ON SCHEMA :: HumanResources TO guest;
 ```sql
 GRANT SELECT ON SCHEMA :: Person TO WilJo WITH GRANT OPTION; 
 ```
+### Renaming a schema
+Execute the following
+```sql
+SELECT 'ALTER SCHEMA dbo TRANSFER ' + s.Name + '.' + o.Name
+FROM sys.Objects o
+INNER JOIN sys.Schemas s on o.schema_id = s.schema_id
+WHERE s.Name = 'oldschema'
+And (o.Type = 'U' Or o.Type = 'P' Or o.Type = 'V')
+```
+This query will result in output in the Results box which looks similar to the output below:
+```sql
+ALTER SCHEMA dbo TRANSFER yourschema.Table1
+ALTER SCHEMA dbo TRANSFER yourschema.Table2
+ALTER SCHEMA dbo TRANSFER yourschema.Table3
+ALTER SCHEMA dbo TRANSFER yourschema.Table4
+ALTER SCHEMA dbo TRANSFER yourschema.Table5
+ALTER SCHEMA dbo TRANSFER yourschema.Table6
+```
+
