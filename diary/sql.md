@@ -89,4 +89,8 @@ ALTER SCHEMA dbo TRANSFER yourschema.Table4
 ALTER SCHEMA dbo TRANSFER yourschema.Table5
 ALTER SCHEMA dbo TRANSFER yourschema.Table6
 ```
-
+### Add column to table
+```sql
+alter table [dbo].[xxx] add  varchar(100) not null default 'BowWow'
+--change type and constraints to your liking
+```
