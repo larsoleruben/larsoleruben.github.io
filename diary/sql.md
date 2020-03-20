@@ -94,3 +94,32 @@ ALTER SCHEMA dbo TRANSFER yourschema.Table6
 alter table [dbo].[xxx] add  varchar(100) not null default 'BowWow'
 --change type and constraints to your liking
 ```
+
+### how to make a simple cursor to iterate over a table
+```sql
+
+declare @id int, @name varchar(200), @currency varchar(10), @country varchar(10), @lat decimal, @lon decimal, @code varchar(50)
+declare c_stuff CURSOR for
+SELECT  [id]
+      ,[name]
+      ,[currency]
+      ,[country]
+      ,[lat]
+      ,[lon]
+      ,[code]
+FROM [myschema].[mytable]
+
+OPEN c_stuff
+FETCH NEXT FROM c_stuff
+INTO @id, @name, @currency, @country, @lat, @lon, @code
+
+WHILE @@FETCH_STATUS = 0
+BEGIN
+	--her kan du lave alt muligt, if then else, etc
+	PRINT CONCAT(@id,' ',@name,' ', @currency,' ', @country,' ', @lat,' ', @lon,' ', @code)
+	FETCH NEXT FROM c_stuff INTO @id, @name, @currency, @country, @lat, @lon, @code
+END
+CLOSE c_stuff
+DEALLOCATE  c_stuff
+```
+
