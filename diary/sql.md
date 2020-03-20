@@ -69,7 +69,7 @@ GRANT INSERT ON SCHEMA :: HumanResources TO guest;
 ```
 ### Granting SELECT permission on schema Person to database user WilJo
 ```sql
-GRANT SELECT ON SCHEMA :: Person TO WilJo WITH GRANT OPTION; 
+GRANT SELECT ON SCHEMA :: Person TO WilJo; 
 ```
 ### Renaming a schema
 Execute the following
