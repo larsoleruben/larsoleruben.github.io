@@ -115,7 +115,6 @@ INTO @id, @name, @currency, @country, @lat, @lon, @code
 
 WHILE @@FETCH_STATUS = 0
 BEGIN
-	--her kan du lave alt muligt, if then else, etc
 	PRINT CONCAT(@id,' ',@name,' ', @currency,' ', @country,' ', @lat,' ', @lon,' ', @code)
 	FETCH NEXT FROM c_stuff INTO @id, @name, @currency, @country, @lat, @lon, @code
 END
