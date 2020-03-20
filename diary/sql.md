@@ -95,7 +95,7 @@ alter table [dbo].[xxx] add  varchar(100) not null default 'BowWow'
 --change type and constraints to your liking
 ```
 
-### how to make a simple cursor to iterate over a table
+### How to make a simple cursor to iterate over a table
 ```sql
 
 declare @id int, @name varchar(200), @currency varchar(10), @country varchar(10), @lat decimal, @lon decimal, @code varchar(50)
