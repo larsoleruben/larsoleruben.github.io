@@ -20,3 +20,7 @@ git branch -r
 ```git
 git show-branch
 ```
+### Se changes at last commit
+```git
+git whatchanged <option>…​
+```
