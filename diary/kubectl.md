@@ -55,3 +55,10 @@ unset           Unsets an individual value in a kubeconfig file
 use-context     Sets the current-context in a kubeconfig file
 view            Display merged kubeconfig settings or a specified kubeconfig file
 ```
+
+### Easi way to make a secret yaml file from a secret file
+```yaml
+kubectl create secret generic my-secret-name \
+    --from-file=./my-secret-file.json --dry-run -o yaml | 
+  kubectl apply -f -
+```
