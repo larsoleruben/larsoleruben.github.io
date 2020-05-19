@@ -62,3 +62,8 @@ kubectl create secret generic my-secret-name \
     --from-file=./my-secret-file.json --dry-run -o yaml | 
   kubectl apply -f -
 ```
+
+### Delete a user from a context
+```yaml
+kubectl --kubeconfig=config-demo config unset users.<name>
+```
