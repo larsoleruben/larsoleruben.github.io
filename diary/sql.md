@@ -139,6 +139,13 @@ Anil
 
 Example SQL
 ```sql
+--just finding duplicates in a simple ways
+
+select count(*),EmployeeName from Employee
+group by EmployeeName
+having count(*) > 1
+
+
 select *
 from (
   select *, rn=row_number() over (partition by EmployeeName order by empId)
@@ -152,12 +159,13 @@ delete x from (
 ) x
 where rn > 1;
 
+--if the data entries have a unique identifier
 
-delete from GuidEmployees
-where CAST(ID AS binary(16)) not in
+delete from Employee 
+where ID not in
 (
-    select min(CAST(ID AS binary(16)))
-    from GuidEmployees
+    select min(ID)
+    from Employee 
     group by EmployeeName 
 );
 ```
