@@ -122,7 +122,7 @@ CLOSE c_stuff
 DEALLOCATE  c_stuff
 ```
 
-### Find and naybe delete duplicates in tables
+### Find and maybe delete duplicates in tables
 Test data
 
 Explanations of the ```over partition by``` clause can be found at microsoft [here](https://docs.microsoft.com/en-us/sql/t-sql/queries/select-over-clause-transact-sql?view=sql-server-ver15)
