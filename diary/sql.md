@@ -122,3 +122,43 @@ CLOSE c_stuff
 DEALLOCATE  c_stuff
 ```
 
+### Find and even delete duplicates in tables
+Test data
+```txt
+EmployeeName
+------------
+Anand
+Anand
+Anil
+Dipak
+Anil
+Dipak
+Dipak
+Anil
+```
+
+Example SQL
+```sql
+select *
+from (
+  select *, rn=row_number() over (partition by EmployeeName order by empId)
+  from Employee 
+) x
+where rn > 1;
+
+delete x from (
+  select *, rn=row_number() over (partition by EmployeeName order by empId)
+  from Employee 
+) x
+where rn > 1;
+
+
+delete from GuidEmployees
+where CAST(ID AS binary(16)) not in
+(
+    select min(CAST(ID AS binary(16)))
+    from GuidEmployees
+    group by EmployeeName 
+);
+```
+
