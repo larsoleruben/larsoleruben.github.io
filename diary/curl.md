@@ -1,4 +1,6 @@
-# All the curl commands I can't remember
+# Curl
+
+## All the curl commands I can't remember
 
 ### Download a file from a website
 ```bash
