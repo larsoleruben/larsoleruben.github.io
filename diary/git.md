@@ -26,7 +26,7 @@ git whatchanged <option>…​
 ```
 
 ### Clean repository for sensitive data
-Download [BGF)[https://rtyley.github.io/bfg-repo-cleaner/] from the its homepage or install it (and Homebrew)
+Download [BGF](https://rtyley.github.io/bfg-repo-cleaner/) from the its homepage or install it (and Homebrew)
 First clone a fresh copy of your repo, using the — mirror flag:  
 ```git
 $ git clone --mirror git://example.com/some-big-repo.git
