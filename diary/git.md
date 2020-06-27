@@ -24,3 +24,25 @@ git show-branch
 ```git
 git whatchanged <option>…​
 ```
+
+### Clean repository for sensitive data
+Download [BGF)[https://rtyley.github.io/bfg-repo-cleaner/] from the its homepage or install it (and Homebrew)
+First clone a fresh copy of your repo, using the — mirror flag:  
+```git
+$ git clone --mirror git://example.com/some-big-repo.git
+```
+Building replacements.txt file  
+```txt
+PASSWORD1 #Replace string 'PASSWORD1' with '***REMOVED***' (default)
+PASSWORD2==>examplePass         # replace with 'examplePass' instead
+PASSWORD3==>                    # replace with the empty string
+```
+Run the BFG programe
+```Java
+java -jar bfg --replace replacement.txt
+```
+Push the repository up again
+```Git
+$ git reflog expire --expire=now --all && git gc --prune=now --  aggressive
+$ git push
+```
