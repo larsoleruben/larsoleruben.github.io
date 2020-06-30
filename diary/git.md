@@ -46,3 +46,7 @@ Push the repository up again
 $ git reflog expire --expire=now --all && git gc --prune=now --  aggressive
 $ git push
 ```
+### Make a new branch
+```Git
+Git checkout -b “newer-branch”
+```
