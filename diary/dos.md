@@ -5,3 +5,9 @@ To search every file in the current directory and all subdirectories that contai
 ```dos
 findstr /s /i StringToFind *.*
 ```
+### To search for hello or there in file x.y, type
+```dos
+findstr hello there x.y
+```
+### More from microsoft
+[You can find more stuff on DOS here](https://docs.microsoft.com/en-us/windows-server/administration/windows-commands/findstr)
