@@ -5,15 +5,28 @@ This will enable you to use an image in in i.e. Azure, AWS or Google in any othe
 ```bash
 kubectl create secret docker-registry my-registry  --docker-email="your@email" --docker-username="your registry username" --docker-server="your registry server address" --docker-password="your registry password"
 ```
+### Create a new secret fropm a file (json or yaml or what not)
+```bash
+kubectl create secret generic secret-name --from-file=secrets.json
+```
+### Decoding a Secret
+```bash
+kubectl get secret mysecret -o yaml
+```
+### Decode the password field
+```bash
+echo 'MWYyZDFlMmU2N2Rm' | base64 --decode
+```
+### Editing a Secret
+```bash
+kubectl edit secrets mysecret
+```
 ### Switch to another context, which is in your ~/.kube/config file
 You can find the names in the ~/.kube/config file. 
 ```bash
 kubectl config use-context my-cluster-name
 ```
-### Create a new secret fropm a file (json or yaml or what not)
-```bash
-kubectl create secret generic secret-name --from-file=secrets.json
-```
+
 ### Autocomplete in bash
 ```bash
 source <(kubectl completion bash) # setup autocomplete in bash into the current shell, bash-completion package should be installed first.
@@ -67,3 +80,4 @@ kubectl create secret generic my-secret-name \
 ```yaml
 kubectl --kubeconfig=config-demo config unset users.<name>
 ```
+
