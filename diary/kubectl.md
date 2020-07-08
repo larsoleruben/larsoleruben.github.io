@@ -1,4 +1,8 @@
-# Kubectl!
+---
+layout: page
+title: Kubectl
+permalink: /diary/kubectl
+---
 ### Make a secret for your private repository.
 This will enable you to use an image in in i.e. Azure, AWS or Google in any other K8 cluster:
 
