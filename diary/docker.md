@@ -1,4 +1,8 @@
-## Docker
+---
+layout: page
+title: Docker
+permalink: /diary/docker
+---
 
 ### Build a new docker image from a docker file
 This is for a image that later will go into Azure. If you want it to be google, find the server url there. The version in the end could be anything
