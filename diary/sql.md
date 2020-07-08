@@ -1,5 +1,9 @@
 
-### sql
+---
+layout: page
+title: Sql
+permalink: /diary/sql
+---
 
 ### Parse dates
 ```sql
