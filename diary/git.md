@@ -1,4 +1,8 @@
-# Git
+---
+layout: page
+title: Git
+permalink: /diary/git
+---
 
 ### Reset your local repo to the remote and overwrite changes
 
