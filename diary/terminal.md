@@ -1,4 +1,8 @@
-# Terminal
+---
+layout: page
+title: Terminal
+permalink: /diary/terminal
+---
 
 ### use vs-code as the default editor in your current terminal
 Can't figure out vim, just set vscode as the default editor
