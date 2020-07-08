@@ -82,6 +82,6 @@ kubectl --kubeconfig=config-demo config unset users.<name>
 ```
 
 ## Links
-[Kubernetes documnetation home](https://kubernetes.io/docs/home/)  
+[Kubernetes documentation home](https://kubernetes.io/docs/home/)  
 [Kubernetes secrets in genereal](https://kubernetes.io/docs/concepts/configuration/secret/)  
 
