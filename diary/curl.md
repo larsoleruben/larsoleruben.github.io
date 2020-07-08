@@ -1,4 +1,8 @@
-# Curl
+---
+layout: page
+title: Curl
+permalink: /diary/curl
+---
 
 ## All the curl commands I can't remember
 
