@@ -4,7 +4,7 @@ title: Terminal
 permalink: /diary/terminal
 ---
 
-### use vs-code as the default editor in your current terminal
+### Use vs-code as the default editor in your current terminal
 Can't figure out vim, just set vscode as the default editor
 ```zsh
 export EDITOR="code -w"
