@@ -1,4 +1,8 @@
-## AZ cli
+---
+layout: page
+title: AZ Cli
+permalink: /diary/az.cli
+---
 
 ### List of your subscrptions
 ```bash
