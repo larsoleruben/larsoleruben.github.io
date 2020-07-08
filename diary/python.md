@@ -1,5 +1,9 @@
 
-#Python
+---
+layout: page
+title: Python
+permalink: /diary/python
+---
 
 ### Using weaitress WSGI to launch a flask app:
 ```cmd
