@@ -1,7 +1,7 @@
 ---
 layout: page
-title: AZ Cli
-permalink: /diary/az.cli
+title: AZ-Cli
+permalink: /diary/az-cli
 ---
 
 ### List of your subscrptions
