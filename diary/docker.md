@@ -18,3 +18,5 @@ https://docs.docker.com/engine/reference/commandline/login/#credentials-store
 docker login registry-url -u username -p password
 docker push my-registry.azurecr.io/image-name:1.0.0
 ```
+### install on ubuntu cook book
+There is straight forward no nonsence [cookbook](https://docs.docker.com/engine/install/ubuntu/) here
