@@ -4,4 +4,5 @@
 
 layout: home
 ---
-Lars Ole Ruben Christoffersen
+# Lars Ole Ruben Christoffersen (LORC)
+Minnie blog!
