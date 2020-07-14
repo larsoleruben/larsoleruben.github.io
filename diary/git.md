@@ -72,3 +72,7 @@ Just a side note: please keep in mind that local and remote branches actually ha
 Even if you've established a tracking [connection](https://www.git-tower.com/learn/git/faq/track-remote-upstream-branch) (which you should for most scenarios), this still does not mean that deleting one would delete the other, too!
 
 If you want any branch item to be deleted, you need to delete it explicitly.
+
+## Links
+1. [Git's home page](https://git-scm.com/) where you can download Git and learn about it as well.
+1. Exelent [book](https://www.git-tower.com/learn/git/ebook) from [Tower](https://www.git-tower.com) about learning GIT and there are some videos also
