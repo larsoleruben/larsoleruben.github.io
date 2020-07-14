@@ -58,3 +58,17 @@ and when you want to push it back
 ```Git
 git push --set-upstream origin borsele_table
 ```
+### Deleting local branches in Git
+```bash
+git branch -d branchToDelete
+```
+### Deleting remote branches in Git
+```bash
+git push origin --delete branchToDelete
+```
+### Deleting both a local and a remote branch
+Just a side note: please keep in mind that local and remote branches actually have nothing to do with each other. They are completely separate objects in Git.
+
+Even if you've established a tracking [connection](https://www.git-tower.com/learn/git/faq/track-remote-upstream-branch) (which you should for most scenarios), this still does not mean that deleting one would delete the other, too!
+
+If you want any branch item to be deleted, you need to delete it explicitly.
