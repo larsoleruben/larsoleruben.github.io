@@ -56,7 +56,7 @@ Git checkout -b “newer-branch”
 ```
 and when you want to push it back
 ```Git
-git push --set-upstream origin borsele_table
+git push --set-upstream origin “newer-branch”
 ```
 ### Deleting local branches in Git
 ```bash
