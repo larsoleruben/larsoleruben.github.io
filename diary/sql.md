@@ -181,7 +181,7 @@ An nvarchar column can store any Unicode data. A varchar column is restricted to
 
 All modern operating systems and development platforms use Unicode internally. By using nvarchar rather than varchar, you can avoid doing encoding conversions every time you read from or write to the database. Conversions take time, and are prone to errors. And recovery from conversion errors is a non-trivial problem.
 
-### How do I find a stored procedure containing <text>?
+### How do I find a stored procedure containing \<text\>?
 ```sql
 SELECT OBJECT_NAME(id) 
     FROM SYSCOMMENTS 
