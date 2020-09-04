@@ -190,7 +190,7 @@ SELECT OBJECT_NAME(id)
     GROUP BY OBJECT_NAME(id)
 ```
 
-### see and set implisit transaction on (and off)
+### See and set implisit transaction on (and off)
 ```sql
 DECLARE @IMPLICIT_TRANSACTIONS VARCHAR(3) = 'OFF';  
 IF ( (2 & @@OPTIONS) = 2 ) SET @IMPLICIT_TRANSACTIONS = 'ON';  
