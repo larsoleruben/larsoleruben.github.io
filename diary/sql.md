@@ -199,3 +199,10 @@ SELECT @IMPLICIT_TRANSACTIONS AS IMPLICIT_TRANSACTIONS;
 SET IMPLICIT_TRANSACTIONS ON;
 ```
 
+### Drop Unique Constraint
+The syntax for dropping a unique constraint in SQL Server is:
+```SQL
+ALTER TABLE table_name DROP CONSTRAINT constraint_name;
+```
+table_name. The name of the table to modify.
+
