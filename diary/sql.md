@@ -205,4 +205,20 @@ The syntax for dropping a unique constraint in SQL Server is:
 ALTER TABLE table_name DROP CONSTRAINT constraint_name;
 ```
 table_name. The name of the table to modify.
+### Finding and killing a transaction on SQL-Server
+
+In the SQL Server Management Studio, to find out details of the active transaction, execute following command
+```SQL
+DBCC opentran()
+```
+You will get the detail of the active transaction, then from the SPID of the active transaction, get the detail about the SPID using following commands
+```SQL
+exec sp_who2 <SPID>
+exec sp_lock <SPID>
+```
+
+Now , you can kill that process using the following command
+```SQL
+kill <SPID>
+```
 
