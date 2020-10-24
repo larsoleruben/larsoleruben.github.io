@@ -43,3 +43,9 @@ az aks get-credentials --resource-group myResourceGroup --name myAKSCluster
 ```bash
 az aks get-credentials --name MyManagedCluster --resource-group MyResourceGroup
 ```
+### Restart a pod in Kubernerest
+As of kubernetes 1.15, you can now do a rolling restart of all pods for a deployment, so that you don’t take the service down
+```bash
+kubectl -n <namepace-name> rollout restart deployment <deployment-name>
+```
+If you have set the namespace in you config, the namespace is optional
