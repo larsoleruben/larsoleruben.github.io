@@ -74,17 +74,20 @@ view            Display merged kubeconfig settings or a specified kubeconfig fil
 ```
 
 ### Easi way to make a secret yaml file from a secret file
-```yaml
+```bash
 kubectl create secret generic my-secret-name \
     --from-file=./my-secret-file.json --dry-run -o yaml | 
   kubectl apply -f -
 ```
 
 ### Delete a user from a context
-```yaml
+```bash
 kubectl --kubeconfig=config-demo config unset users.<name>
 ```
-
+### Rolling restart of a deployment pod.
+```bash
+kubectl rollout restart deployment/<my-deployment>
+```
 ## Links
 [Kubernetes documentation home](https://kubernetes.io/docs/home/)  
 [Kubernetes secrets in genereal](https://kubernetes.io/docs/concepts/configuration/secret/)  
