@@ -91,6 +91,7 @@ kubectl --kubeconfig=config-demo config unset users.<name>
 kubectl rollout restart deployment/<my-deployment>
 ```
 ## Links
+[A page with most CLI commands](https://kubernetes.io/docs/reference/kubectl/cheatsheet/)
 [Kubernetes documentation home](https://kubernetes.io/docs/home/)  
 [Kubernetes secrets in genereal](https://kubernetes.io/docs/concepts/configuration/secret/)  
 
