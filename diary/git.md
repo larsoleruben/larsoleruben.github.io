@@ -73,6 +73,14 @@ Even if you've established a tracking [connection](https://www.git-tower.com/lea
 
 If you want any branch item to be deleted, you need to delete it explicitly.
 
+### After git 2.16 git outputs to VIM instead of the console
+According to [this link](https://github.com/git/git/blob/master/Documentation/RelNotes/2.16.0.txt#L85-L88)
+Get back to normal like this:
+```bash
+git config --global pager.branch false # global setting
+git --no-pager <your command> # for each command
+```
+
 ## Links
 1. [Git's home page](https://git-scm.com/) where you can download Git and learn about it as well.
 1. Exelent [book](https://www.git-tower.com/learn/git/ebook) from [Tower](https://www.git-tower.com) about learning GIT and there are some videos also
