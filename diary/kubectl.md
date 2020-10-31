@@ -90,6 +90,11 @@ kubectl --kubeconfig=config-demo config unset users.<name>
 ```bash
 kubectl rollout restart deployment/<my-deployment>
 ```
+
+### Get a proxy on your localhost
+```bash
+kubectl proxy
+```
 ## Links
 [A page with most CLI commands](https://kubernetes.io/docs/reference/kubectl/cheatsheet/)
 [Kubernetes documentation home](https://kubernetes.io/docs/home/)  
