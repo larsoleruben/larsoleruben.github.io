@@ -1,7 +1,3 @@
-% Very basic Docker and Kubernetes
-% By Lars Christoffersen
-% Date 02/11/2020
-
 ---
 layout: page
 title: Very Basic Docker and K8 course
