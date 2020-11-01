@@ -1,6 +1,6 @@
 ---
 layout: page
-title: Very Basic Docker and K8 course
+title: Basic Docker+K8
 permalink: /diary/terminal
 --- 
 
@@ -10,7 +10,7 @@ permalink: /diary/terminal
 - Some stuff about kubernetes and how we use it
 - In the end both you and I will hopefully be a little wiser
 
-# Where do we use Kubernetes in the ØBS
+# Where do we use Kubernetes
 
 - We have 3 clusters.
 - One for dev and test
@@ -18,7 +18,6 @@ permalink: /diary/terminal
 - In them we are running services for transformations
 - And services for API, Calculation Engine and Dashboard
 - Deployment is automated (more or less)
-
 
 # Docker!
 
