@@ -10,9 +10,19 @@ permalink: /diary/terminal
 
 # What is this about
 
-1. A little bit about docker
-2. Some stuff about kubernetes and how we use it
-3. In the end both you and I will hopefully be a little wiser
+- A little bit about docker
+- Some stuff about kubernetes and how we use it
+- In the end both you and I will hopefully be a little wiser
+
+# Where do we use Kubernetes in the ØBS
+
+- We have 3 clusters.
+- One for dev and test
+- Two for production, but only one is active
+- In them we are running services for transformations
+- And services for API, Calculation Engine and Dashboard
+- Deployment is automated (more or less)
+
 
 # Docker!
 
