@@ -75,7 +75,7 @@ use-context     Sets the current-context in a kubeconfig file
 view            Display merged kubeconfig settings or a specified kubeconfig file
 ```
 
-### Easi way to make a secret yaml file from a secret file
+### Easy way to make a secret yaml file from a secret file
 ```bash
 kubectl create secret generic my-secret-name \
     --from-file=./my-secret-file.json --dry-run -o yaml | 
@@ -95,6 +95,12 @@ kubectl rollout restart deployment/<my-deployment>
 ```bash
 kubectl proxy
 ```
+
+### Get a terminal in a busybox image
+```bash
+kubectl run -i --rm  --tty busybox --image=busybox --restart=Never -- sh
+```
+
 ## Links
 [A page with most CLI commands](https://kubernetes.io/docs/reference/kubectl/cheatsheet/)
 [Kubernetes documentation home](https://kubernetes.io/docs/home/)  

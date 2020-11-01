@@ -20,3 +20,6 @@ docker push my-registry.azurecr.io/image-name:1.0.0
 ```
 ### install on ubuntu cook book
 There is straight forward no nonsence [cookbook](https://docs.docker.com/engine/install/ubuntu/) here
+
+### start a container and go into it's shell
+docker run --rm -it ubuntu /bin/bash 
