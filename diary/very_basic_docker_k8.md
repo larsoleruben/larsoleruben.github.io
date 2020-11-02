@@ -1,7 +1,7 @@
 ---
 layout: page
 title: Basic Docker+K8
-permalink: /diary/terminal
+permalink: /diary/docker-k8
 --- 
 
 # What is this about
