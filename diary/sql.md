@@ -1,6 +1,6 @@
 ---
 layout: page
-title: Sql
+title: Sql (TSQL for mssql)
 permalink: /diary/sql
 ---
 
