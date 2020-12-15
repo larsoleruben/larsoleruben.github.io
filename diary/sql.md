@@ -1,7 +1,7 @@
 ---
 layout: page
 title: Sql (TSQL for mssql)
-permalink: /diary/sql
+permalink: /diary/sql-mssql
 ---
 
 ### Parse dates
