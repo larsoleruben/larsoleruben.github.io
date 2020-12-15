@@ -19,7 +19,7 @@ select count(*), myCol from [dbo].[myTable]
 
 ### Move table from one schema to antoher (change ownership)
 ```sql
-ALTER SCHEMA HumanResources TRANSFER Person.Address;  
+ALTER SCHEMA HumanResources TRANSFER Person.Address;
 ```
 ### Create a foreign key in an existing table
 ```sql
@@ -32,7 +32,7 @@ ALTER TABLE Sales.TempSalesReason
 ```
 ### Create a foreign key in a new table
 ```sql
-CREATE TABLE Sales.TempSalesReason 
+CREATE TABLE Sales.TempSalesReason
    (
       TempID int NOT NULL, Name nvarchar(50)
       , CONSTRAINT PK_TempSales PRIMARY KEY NONCLUSTERED (TempID)
@@ -59,7 +59,7 @@ CREATE TABLE Production.TransactionHistoryArchive1
 ```
 ### Modify column’s data type
 ```sql
-ALTER TABLE table_name 
+ALTER TABLE table_name
 ALTER COLUMN column_name new_data_type(size);
 ```
 
@@ -72,7 +72,7 @@ GRANT INSERT ON SCHEMA :: HumanResources TO guest;
 ```
 ### Granting SELECT permission on schema Person to database user WilJo
 ```sql
-GRANT SELECT ON SCHEMA :: Person TO WilJo; 
+GRANT SELECT ON SCHEMA :: Person TO WilJo;
 ```
 ### Renaming a schema
 Execute the following
@@ -155,24 +155,24 @@ having count(*) > 1
 select *
 from (
   select *, rn=row_number() over (partition by EmployeeName order by empId)
-  from Employee 
+  from Employee
 ) x
 where rn > 1;
 
 delete x from (
   select *, rn=row_number() over (partition by EmployeeName order by empId)
-  from Employee 
+  from Employee
 ) x
 where rn > 1;
 
 --if the data entries have a unique identifier
 
-delete from Employee 
+delete from Employee
 where ID not in
 (
     select min(ID)
-    from Employee 
-    group by EmployeeName 
+    from Employee
+    group by EmployeeName
 );
 ```
 
@@ -183,18 +183,18 @@ All modern operating systems and development platforms use Unicode internally. B
 
 ### How do I find a stored procedure containing \<text\>?
 ```sql
-SELECT OBJECT_NAME(id) 
-    FROM SYSCOMMENTS 
-    WHERE [text] LIKE '%Foo%' 
-    AND OBJECTPROPERTY(id, 'IsProcedure') = 1 
+SELECT OBJECT_NAME(id)
+    FROM SYSCOMMENTS
+    WHERE [text] LIKE '%Foo%'
+    AND OBJECTPROPERTY(id, 'IsProcedure') = 1
     GROUP BY OBJECT_NAME(id)
 ```
 
 ### See and set implisit transaction on (and off)
 ```sql
-DECLARE @IMPLICIT_TRANSACTIONS VARCHAR(3) = 'OFF';  
-IF ( (2 & @@OPTIONS) = 2 ) SET @IMPLICIT_TRANSACTIONS = 'ON';  
-SELECT @IMPLICIT_TRANSACTIONS AS IMPLICIT_TRANSACTIONS;  
+DECLARE @IMPLICIT_TRANSACTIONS VARCHAR(3) = 'OFF';
+IF ( (2 & @@OPTIONS) = 2 ) SET @IMPLICIT_TRANSACTIONS = 'ON';
+SELECT @IMPLICIT_TRANSACTIONS AS IMPLICIT_TRANSACTIONS;
 
 SET IMPLICIT_TRANSACTIONS ON;
 ```
@@ -220,5 +220,35 @@ exec sp_lock <SPID>
 Now , you can kill that process using the following command
 ```SQL
 kill <SPID>
+```
+
+### Find size (MB and rows) of all tables and indexes in you database
+```SQL
+SELECT
+ t.NAME AS TableName,
+ i.name AS indexName,
+ SUM(p.rows) AS RowCounts,
+ SUM(a.total_pages) AS TotalPages,
+ SUM(a.used_pages) AS UsedPages,
+ SUM(a.data_pages) AS DataPages,
+ (SUM(a.total_pages) * 8) / 1024 AS TotalSpaceMB,
+ (SUM(a.used_pages) * 8) / 1024 AS UsedSpaceMB,
+ (SUM(a.data_pages) * 8) / 1024 AS DataSpaceMB
+FROM
+ sys.tables t
+INNER JOIN
+ sys.indexes i ON t.OBJECT_ID = i.object_id
+INNER JOIN
+ sys.partitions p ON i.object_id = p.OBJECT_ID AND i.index_id = p.index_id
+INNER JOIN
+ sys.allocation_units a ON p.partition_id = a.container_id
+WHERE
+ t.NAME NOT LIKE 'dt%' AND
+ i.OBJECT_ID > 255 AND
+ i.index_id <= 1
+ GROUP BY
+ t.NAME, i.object_id, i.index_id, i.name
+ORDER BY
+ OBJECT_NAME(i.object_id)
 ```
 
