@@ -25,10 +25,10 @@ echo 'MWYyZDFlMmU2N2Rm' | base64 --decode
 ```bash
 kubectl edit secrets mysecret
 ```
-But beware, you then get the secret 64 encoded, and you will have to decode and encode it before updating.  
+But beware, you then get the secret 64 encoded, and you will have to decode and encode it before updating.
 Fortunatly there is a very good small [python script for that](https://github.com/lbolla/kube-secret-editor), which you can find [here](https://github.com/lbolla/kube-secret-editor)
 ### Switch to another context, which is in your ~/.kube/config file
-You can find the names in the ~/.kube/config file. 
+You can find the names in the ~/.kube/config file.
 ```bash
 kubectl config use-context my-cluster-name
 ```
@@ -78,7 +78,7 @@ view            Display merged kubeconfig settings or a specified kubeconfig fil
 ### Easy way to make a secret yaml file from a secret file
 ```bash
 kubectl create secret generic my-secret-name \
-    --from-file=./my-secret-file.json --dry-run -o yaml | 
+    --from-file=./my-secret-file.json --dry-run -o yaml |
   kubectl apply -f -
 ```
 
@@ -101,8 +101,14 @@ kubectl proxy
 kubectl run -i --rm  --tty busybox --image=busybox --restart=Never -- sh
 ```
 
+### Restart a pod in Kubernerest
+As of kubernetes 1.15, you can now do a rolling restart of all pods for a deployment, so that you don’t take the service down
+```bash
+kubectl -n <namepace-name> rollout restart deployment <deployment-name>
+```
+If you have set the namespace in you config, the namespace is optional
 ## Links
 [A page with most CLI commands](https://kubernetes.io/docs/reference/kubectl/cheatsheet/)
-[Kubernetes documentation home](https://kubernetes.io/docs/home/)  
-[Kubernetes secrets in genereal](https://kubernetes.io/docs/concepts/configuration/secret/)  
+[Kubernetes documentation home](https://kubernetes.io/docs/home/)
+[Kubernetes secrets in genereal](https://kubernetes.io/docs/concepts/configuration/secret/)
 
