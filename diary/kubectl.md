@@ -101,6 +101,11 @@ kubectl proxy
 kubectl run -i --rm  --tty busybox --image=busybox --restart=Never -- sh
 ```
 
+### Get the logs from a crashing container during container init causing crashloopbackoff
+```
+kubectl logs you_pod -c  container_name
+```
+
 ### Restart a pod in Kubernerest
 As of kubernetes 1.15, you can now do a rolling restart of all pods for a deployment, so that you don’t take the service down
 ```bash
