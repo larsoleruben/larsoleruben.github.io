@@ -252,3 +252,17 @@ ORDER BY
  OBJECT_NAME(i.object_id)
 ```
 
+### Find gaps in sequences in tables in database
+```SQL
+SELECT  TOP 1
+        id + 1
+FROM    mytable mo
+WHERE   NOT EXISTS
+        (
+        SELECT  NULL
+        FROM    mytable mi
+        WHERE   mi.id = mo.id + 1
+        )
+ORDER BY
+        id
+```
