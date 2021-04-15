@@ -46,9 +46,11 @@ def main(file_length):
     for chunk in chunk_generator(csvReader):
         cecnxn = pyodbc.connect(
             """DRIVER={ODBC Driver 17 for SQL Server};SERVER=127.0.0.1,1400;DATABASE=obs-db-gold-local;UID=sa;PWD=P@ssw0rd!;autocommit=False"""
+            # autocommit=False is VERY important
         )
         cursor = cecnxn.cursor()
         cursor.fast_executemany = True
+        # No named parameters
         cursor.executemany(
             "insert into dbo.speed_test (id, name, age,dato ) values (?,?,?,?)", chunk
         )
