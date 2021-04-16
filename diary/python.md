@@ -15,7 +15,7 @@ result = [dict(zip([key[0] for key in cursor.description], row)) for row in resu
 ```
 
 ### Making pyodbc fast, with a few simple tricks
-Pyodbc is painfully slow for large inserts. But if you tweak it a little like remove auto commit and do the inserts in batches, it becomes very fast. This little demonstrantion inserts 1.5 million rows in just app 30 seconds. With "normal" code, as you would just make it, it takes more than half an hour. And no, you don't need the file, just make the list of lists. And remeber if you make the chunks too big, you force the database to hande very large ["redo logs"](https://docs.oracle.com/cd/B28359_01/server.111/b28310/onlineredo001.htm#ADMIN11302) or ["transaction logs"](https://docs.oracle.com/cd/B28359_01/server.111/b28310/onlineredo001.htm#ADMIN11302) (that is the name in sqlserver as far as I remember)
+Pyodbc is painfully slow for large inserts. But if you tweak it a little like remove auto commit and do the inserts in batches, it becomes very fast. This little demonstrantion inserts 1.5 million rows in just app 30 seconds. With "normal" code, as you would just make it, it takes more than half an hour. And no, you don't need the file, just make the list of lists. And remeber if you make the chunks too big, you force the database to hande very large ["redo logs"](https://docs.oracle.com/cd/B28359_01/server.111/b28310/onlineredo001.htm#ADMIN11302) (oracle) or ["transaction logs"](https://docs.oracle.com/cd/B28359_01/server.111/b28310/onlineredo001.htm#ADMIN11302) (sqlserver)
 ```python
 import pyodbc
 import datetime
