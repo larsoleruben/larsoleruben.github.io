@@ -43,6 +43,10 @@ echo "source <(kubectl completion bash)" >> ~/.bashrc # add autocomplete permane
 alias k=kubectl
 complete -F __start_kubectl k
 ```
+### Changeing namespace "on the fly", i.e. not permanently
+```bash
+kubectl --namespace=mynamespace
+```
 ### Setting namespace preference
 ```bash
 kubectl config set-context --current --namespace=<insert-namespace-name-here>
