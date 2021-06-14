@@ -116,6 +116,11 @@ As of kubernetes 1.15, you can now do a rolling restart of all pods for a deploy
 kubectl -n <namepace-name> rollout restart deployment <deployment-name>
 ```
 If you have set the namespace in you config, the namespace is optional
+
+### scaling a replica set
+```bash
+kubectl scale --replicas=3 rs/foo
+```
 ## Links
 [A page with most CLI commands](https://kubernetes.io/docs/reference/kubectl/cheatsheet/)
 [Kubernetes documentation home](https://kubernetes.io/docs/home/)
