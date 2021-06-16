@@ -3,6 +3,10 @@ layout: page
 title: Python
 permalink: /diary/python
 ---
+### Making a virtual environment
+```bash
+python3 -m venv /path/to/new/virtual/environment
+```
 
 ### Using weaitress WSGI to launch a flask app:
 ```cmd
