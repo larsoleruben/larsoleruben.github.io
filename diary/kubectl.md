@@ -121,6 +121,16 @@ If you have set the namespace in you config, the namespace is optional
 ```bash
 kubectl scale --replicas=3 rs/foo
 ```
+## Deployments
+### For normal deployment:
+```bash
+kubectl apply -f my-yaml-deployment.yaml
+```
+### Dry run, i.e. check everything is ok
+```bash
+kubectl apply --server-dry-run my-yaml-deployment.yaml
+```
+
 ## Links
 [A page with most CLI commands](https://kubernetes.io/docs/reference/kubectl/cheatsheet/)
 [Kubernetes documentation home](https://kubernetes.io/docs/home/)
