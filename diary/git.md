@@ -31,11 +31,11 @@ git whatchanged <option>…​
 
 ### Clean repository for sensitive data
 Download [BGF](https://rtyley.github.io/bfg-repo-cleaner/) from the its homepage or install it (and Homebrew)
-First clone a fresh copy of your repo, using the — mirror flag:  
+First clone a fresh copy of your repo, using the — mirror flag:
 ```git
 $ git clone --mirror git://example.com/some-big-repo.git
 ```
-Building replacements.txt file  
+Building replacements.txt file
 ```txt
 PASSWORD1 #Replace string 'PASSWORD1' with '***REMOVED***' (default)
 PASSWORD2==>examplePass         # replace with 'examplePass' instead
@@ -74,7 +74,7 @@ Even if you've established a tracking [connection](https://www.git-tower.com/lea
 If you want any branch item to be deleted, you need to delete it explicitly.
 
 ### After git 2.16 git outputs to VIM instead of the console
-According to [this link](https://github.com/git/git/blob/master/Documentation/RelNotes/2.16.0.txt#L85-L88).    
+According to [this link](https://github.com/git/git/blob/master/Documentation/RelNotes/2.16.0.txt#L85-L88).
 Get back to normal like this:
 ```bash
 git config --global pager.branch false # global setting
@@ -84,3 +84,25 @@ git --no-pager <your command> # for each command
 ## Links
 1. [Git's home page](https://git-scm.com/) where you can download Git and learn about it as well.
 1. Exelent [book](https://www.git-tower.com/learn/git/ebook) from [Tower](https://www.git-tower.com) about learning GIT and there are some videos also
+
+## Renaming branches
+If you want to rename a branch while pointed to any branch, do:
+```bash
+git branch -m <oldname> <newname>
+```
+If you want to rename the current branch, you can do:
+```bash
+git branch -m <newname>
+```
+If you want to push the local branch and reset the upstream branch:
+```bash
+git push origin -u <newname>
+```
+And finally if you want to Delete the remote branch:
+```bash
+git push origin --delete <oldname>
+```
+A way to remember this is -m is for "move" (or mv), which is how you rename files. Adding an alias could also help. To do so, run the following:
+```bash
+git config --global alias.rename 'branch -m'
+```
