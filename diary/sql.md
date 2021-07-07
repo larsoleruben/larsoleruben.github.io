@@ -409,3 +409,9 @@ ORDER BY qs.total_logical_reads DESC
 -- ORDER BY qs.total_logical_writes DESC -- logical writes
 -- ORDER BY qs.total_worker_time DESC -- CPU time
 ```
+### Working with extended propperties for ducumentation
+Here is a great [link](https://www.mssqltips.com/sqlservertip/5384/working-with-sql-server-extended-properties/) for that.
+In essence you can use the like this:
+```sql
+EXEC sys.sp_addextendedproperty @name = N'Description', @value = N'Some description', @level0type = N'SCHEMA', @level0name = schema_name, @level1type = N'TABLE',  @level1name = table_name;
+```
