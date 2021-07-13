@@ -9,12 +9,12 @@ It is very comme to see installation scripts for various programs usign a curl r
 ## All the curl commands I can't remember, but
 There is quite good documentation for all of [curl here](https://ec.haxx.se)
 
-### Download a file from a website
+## Download a file from a website
 ```bash
 curl http://some.url --output some.file
 ```
 
-### Multipart formposts
+## Multipart formposts
 With curl, you add each separate multipart with one -F (or --form) flag and you then continue and add one -F for every input field in the form that you want to send.
 The above small example form has two parts, one named 'person' that is a plain text field and one named 'secret' that is a file.
 Send your data to that form like this:

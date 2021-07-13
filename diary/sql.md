@@ -3,25 +3,24 @@ layout: page
 title: Sql (TSQL for mssql)
 permalink: /diary/sql-mssql
 ---
-
-### Parse dates
+## Parse dates
 ```sql
 --culture could be  'en-GB'
 PARSE ( string_value AS data_type [ USING culture ] )
 -- or you can even parse a month and year only, defaulting to the 1st at 00:00:00
 select PARSE('feb-2018' as datetime USING 'en-UK')
 ```
-### Get duplicates or all equal entries of the same value
+## Get duplicates or all equal entries of the same value
 ```sql
 select count(*), myCol from [dbo].[myTable]
   group by myCol having COUNT(*) > 1 --For duplicates
 ```
 
-### Move table from one schema to antoher (change ownership)
+## Move table from one schema to antoher (change ownership)
 ```sql
 ALTER SCHEMA HumanResources TRANSFER Person.Address;
 ```
-### Create a foreign key in an existing table
+## Create a foreign key in an existing table
 ```sql
 ALTER TABLE Sales.TempSalesReason
    ADD CONSTRAINT FK_TempSales_SalesReason FOREIGN KEY (TempID)
@@ -30,7 +29,7 @@ ALTER TABLE Sales.TempSalesReason
       ON UPDATE CASCADE
 ;
 ```
-### Create a foreign key in a new table
+## Create a foreign key in a new table
 ```sql
 CREATE TABLE Sales.TempSalesReason
    (
@@ -43,12 +42,12 @@ CREATE TABLE Sales.TempSalesReason
    )
 ;
 ```
-### To create a primary key in an existing table
+## To create a primary key in an existing table
 ```sql
 ALTER TABLE Production.TransactionHistoryArchive
    ADD CONSTRAINT PK_TransactionHistoryArchive_TransactionID PRIMARY KEY CLUSTERED (TransactionID);
 ```
-### To create a primary key in a new table
+## To create a primary key in a new table
 ```sql
 CREATE TABLE Production.TransactionHistoryArchive1
    (
@@ -57,7 +56,7 @@ CREATE TABLE Production.TransactionHistoryArchive1
    )
 ;
 ```
-### Modify column’s data type
+## Modify column’s data type
 ```sql
 ALTER TABLE table_name
 ALTER COLUMN column_name new_data_type(size);
@@ -66,15 +65,15 @@ ALTER COLUMN column_name new_data_type(size);
 
 
 
-### Granting INSERT permission on schema HumanResources to guest
+## Granting INSERT permission on schema HumanResources to guest
 ```sql
 GRANT INSERT ON SCHEMA :: HumanResources TO guest;
 ```
-### Granting SELECT permission on schema Person to database user WilJo
+## Granting SELECT permission on schema Person to database user WilJo
 ```sql
 GRANT SELECT ON SCHEMA :: Person TO WilJo;
 ```
-### Renaming a schema
+## Renaming a schema
 Execute the following
 ```sql
 SELECT 'ALTER SCHEMA dbo TRANSFER ' + s.Name + '.' + o.Name
@@ -92,13 +91,13 @@ ALTER SCHEMA dbo TRANSFER yourschema.Table4
 ALTER SCHEMA dbo TRANSFER yourschema.Table5
 ALTER SCHEMA dbo TRANSFER yourschema.Table6
 ```
-### Add column to table
+## Add column to table
 ```sql
 alter table [dbo].[xxx] add  varchar(100) not null default 'BowWow'
 --change type and constraints to your liking
 ```
 
-### How to make a simple cursor to iterate over a table
+## How to make a simple cursor to iterate over a table
 ```sql
 
 declare @id int, @name varchar(200), @currency varchar(10), @country varchar(10), @lat decimal, @lon decimal, @code varchar(50)
@@ -125,7 +124,7 @@ CLOSE c_stuff
 DEALLOCATE  c_stuff
 ```
 
-### Find and maybe delete duplicates in tables
+## Find and maybe delete duplicates in tables
 Test data
 
 Explanations of the ```over partition by``` clause can be found at microsoft [here](https://docs.microsoft.com/en-us/sql/t-sql/queries/select-over-clause-transact-sql?view=sql-server-ver15)
@@ -176,12 +175,12 @@ where ID not in
 );
 ```
 
-### nvarchar versus varchar
+## nvarchar versus varchar
 An nvarchar column can store any Unicode data. A varchar column is restricted to an 8-bit codepage. Some people think that varchar should be used because it takes up less space. I believe this is not the correct answer. Codepage incompatabilities are a pain, and Unicode is the cure for codepage problems. With cheap disk and memory nowadays, there is really no reason to waste time mucking around with code pages anymore.
 
 All modern operating systems and development platforms use Unicode internally. By using nvarchar rather than varchar, you can avoid doing encoding conversions every time you read from or write to the database. Conversions take time, and are prone to errors. And recovery from conversion errors is a non-trivial problem.
 
-### How do I find a stored procedure containing \<text\>?
+## How do I find a stored procedure containing \<text\>?
 ```sql
 SELECT OBJECT_NAME(id)
     FROM SYSCOMMENTS
@@ -190,7 +189,7 @@ SELECT OBJECT_NAME(id)
     GROUP BY OBJECT_NAME(id)
 ```
 
-### See and set implisit transaction on (and off)
+## See and set implicit transaction on (and off)
 ```sql
 DECLARE @IMPLICIT_TRANSACTIONS VARCHAR(3) = 'OFF';
 IF ( (2 & @@OPTIONS) = 2 ) SET @IMPLICIT_TRANSACTIONS = 'ON';
@@ -199,13 +198,13 @@ SELECT @IMPLICIT_TRANSACTIONS AS IMPLICIT_TRANSACTIONS;
 SET IMPLICIT_TRANSACTIONS ON;
 ```
 
-### Drop Unique Constraint
+## Drop Unique Constraint
 The syntax for dropping a unique constraint in SQL Server is:
 ```SQL
 ALTER TABLE table_name DROP CONSTRAINT constraint_name;
 ```
 table_name. The name of the table to modify.
-### Finding and killing a transaction on SQL-Server
+## Finding and killing a transaction on SQL-Server
 
 In the SQL Server Management Studio, to find out details of the active transaction, execute following command
 ```SQL
@@ -222,7 +221,7 @@ Now , you can kill that process using the following command
 kill <SPID>
 ```
 
-### Find size (MB and rows) of all tables and indexes in you database
+## Find size (MB and rows) of all tables and indexes in you database
 ```SQL
 SELECT
  t.NAME AS TableName,
@@ -252,7 +251,7 @@ ORDER BY
  OBJECT_NAME(i.object_id)
 ```
 
-### Find gaps in sequences in tables in database
+## Find gaps in sequences in tables in database
 ```SQL
 SELECT  TOP 1
         id + 1
@@ -267,7 +266,7 @@ ORDER BY
         id
 ```
 
-### Date and Time Conversions Using SQL Server
+## Date and Time Conversions Using SQL Server
 
 
 |Format #|Query|Sample|
@@ -346,7 +345,7 @@ END
 
 SELECT * FROM #dateFormats
 ```
-### Further reading
+## Further reading
 
 [Determine SQL Server Date and Time Parts with DATEPART and DATENAME Functions](https://www.mssqltips.com/sqlservertip/2507/determine-sql-server-date-and-time-parts-with-datepart-and-datename-functions/)
 
@@ -359,7 +358,7 @@ SELECT * FROM #dateFormats
 [Format SQL Server Dates with FORMAT Function](https://www.mssqltips.com/sqlservertip/2655/format-sql-server-dates-with-format-function/)
 
 
-#### Find procedure which contains a certain string
+## Find procedure which contains a certain string
 ```sql
 DECLARE @SearchText varchar(1000) = 'serie_id';
 
@@ -384,7 +383,7 @@ FROM (
 ORDER BY T.SPName
 ```
 
-### Find queries which take the most resources
+## Find queries which take the most resources
 ```SQL
 SELECT TOP 30
     SUBSTRING(qt.TEXT, (qs.statement_start_offset/2)+1,
@@ -409,14 +408,14 @@ ORDER BY qs.total_logical_reads DESC
 -- ORDER BY qs.total_logical_writes DESC -- logical writes
 -- ORDER BY qs.total_worker_time DESC -- CPU time
 ```
-### Working with extended propperties for ducumentation
+## Working with extended propperties for ducumentation
 Here is a great [link](https://www.mssqltips.com/sqlservertip/5384/working-with-sql-server-extended-properties/) for that.
 In essence you can use the like this:
 ```sql
 EXEC sys.sp_addextendedproperty @name = N'Description', @value = N'Some description', @level0type = N'SCHEMA', @level0name = schema_name, @level1type = N'TABLE',  @level1name = table_name;
 ```
 
-### Finding all cached queries
+## Finding all cached queries
 ```sql
 SELECT cplan.usecounts, cplan.objtype, qtext.text, qplan.query_plan
 FROM sys.dm_exec_cached_plans AS cplan

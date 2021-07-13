@@ -3,23 +3,23 @@ layout: page
 title: Python
 permalink: /diary/python
 ---
-### Making a virtual environment
+## Making a virtual environment
 ```bash
 python3 -m venv /path/to/new/virtual/environment
 ```
 
-### Using weaitress WSGI to launch a flask app:
+## Using weaitress WSGI to launch a flask app:
 ```cmd
 waitress-serve --port=8000 --host=0.0.0.0 --call 'mymodule:create_app'
 ```
-### Using List comprehensions to unpack a curser to an array of dicts for each row
+## Using List comprehensions to unpack a curser to an array of dicts for each row
 ```python
-results_proxy = cursor.execute('some sql', ['some parfams'])
+results_proxy = cursor.execute('some sql', ['some params'])
 result = [dict(zip([key[0] for key in cursor.description], row)) for row in results_proxy]
 ```
 
-### Making pyodbc fast, with a few simple tricks
-Pyodbc is painfully slow for large inserts. But if you tweak it a little like remove auto commit and do the inserts in batches, it becomes very fast. This little demonstrantion inserts 1.5 million rows in just app 30 seconds. With "normal" code, as you would just make it, it takes more than half an hour. And no, you don't need the file, just make the list of lists. And remeber if you make the chunks too big, you force the database to hande very large ["redo logs"](https://docs.oracle.com/cd/B28359_01/server.111/b28310/onlineredo001.htm#ADMIN11302) (oracle) or ["transaction logs"](https://docs.oracle.com/cd/B28359_01/server.111/b28310/onlineredo001.htm#ADMIN11302) (sqlserver)
+## Making pyodbc fast, with a few simple tricks
+Pyodbc is painfully slow for large inserts. But if you tweak it a little like remove auto commit and do the inserts in batches, it becomes very fast. This little demonstration inserts 1.5 million rows in just app 30 seconds. With "normal" code, as you would just make it, it takes more than half an hour. And no, you don't need the file, just make the list of lists. And remember if you make the chunks too big, you force the database to handle very large ["redo logs"](https://docs.oracle.com/cd/B28359_01/server.111/b28310/onlineredo001.htm#ADMIN11302) (oracle) or ["transaction logs"](https://docs.oracle.com/cd/B28359_01/server.111/b28310/onlineredo001.htm#ADMIN11302) (sqlserver)
 ```python
 import pyodbc
 import datetime
