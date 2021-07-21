@@ -2,7 +2,7 @@
 layout: page
 title: Basic Docker+K8
 permalink: /diary/docker-k8
---- 
+---
 
 # What is this about
 
@@ -22,8 +22,8 @@ permalink: /diary/docker-k8
 # Docker!
 
 ![Deployment types through time](https://d33wubrfki0l68.cloudfront.net/26a177ede4d7b032362289c6fccd448fc4a91174/eb693/images/docs/container_evolution.svg)
-- Most popular containerisation tool out there. There are a few others i.e. Open shift from refhat and Mesos from Apache.
-- **Docker IS NOT A VIRTUAL MACHINE** 
+- Most popular containerisation tool out there. There are a few others i.e. Open shift from redhat and Mesos from Apache.
+- **Docker IS NOT A VIRTUAL MACHINE**
 - DEMO: Run a docker container from a Dockerfile on the local machine and show the MSQL Database
 - [Docs] if you really want to see how it is working under the hood, watch [Liz Rice video on building a container from scratch in Go](https://youtu.be/8fi7uSYlOdc) or se [her github page](https://github.com/lizrice/containers-from-scratch) and do the experiments
 
@@ -46,7 +46,7 @@ permalink: /diary/docker-k8
 - Pods are the smallest deployable units of computing that you can create and manage in Kubernetes.
 - Pods that run a single container
 - Pods that run multiple containers that need to work together
-- Demo: Lets make a pod out of the flask container mock up thingy   
+- Demo: Lets make a pod out of the flask container mock up thingy
 - [Docs](https://kubernetes.io/docs/concepts/overview/components/)
 
 # Kubernetes API or Cli

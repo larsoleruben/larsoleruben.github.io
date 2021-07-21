@@ -98,6 +98,10 @@ If you want to push the local branch and reset the upstream branch:
 ```bash
 git push origin -u <newname>
 ```
+Or delete local branch
+```bash
+git branch -d <branch>
+```
 And finally if you want to Delete the remote branch:
 ```bash
 git push origin --delete <oldname>
