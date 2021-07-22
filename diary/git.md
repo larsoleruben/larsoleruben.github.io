@@ -110,3 +110,8 @@ A way to remember this is -m is for "move" (or mv), which is how you rename file
 ```bash
 git config --global alias.rename 'branch -m'
 ```
+## Reset local branch to be exact copy of remote
+```bash
+git fetch origin
+git reset --hard origin/branch-name
+```
