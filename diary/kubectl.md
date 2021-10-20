@@ -123,12 +123,13 @@ kubectl scale --replicas=3 rs/foo
 ```
 ## Deployments
 ## For normal deployment:
+The dash f "-f" is for "file"
 ```bash
 kubectl apply -f my-yaml-deployment.yaml
 ```
 ## Dry run, i.e. check everything is ok
 ```bash
-kubectl apply --server-dry-run my-yaml-deployment.yaml
+kubectl apply --dry-run=server my-yaml-deployment.yaml
 ```
 
 ## Links
