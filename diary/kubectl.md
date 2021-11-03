@@ -140,7 +140,7 @@ docker build -t myregname.azurecr.io/cfdmails:1.006 .
 ```
 ## Run above created image locally with the appconfig folder mounted (similar to a mounted secret)
 
-You have to have a folder in root with the name kvsecrets and it should contain the appconfig.json file
+You need to have a folder in root with the name kvsecrets and it should contain the appconfig.json file
 
 ```bash
  docker run -d \
