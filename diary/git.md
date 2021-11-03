@@ -112,7 +112,7 @@ And finally if you want to Delete the remote branch:
 ```bash
 git push origin --delete <oldname>
 ```
-A way to remember this is -m is for "move" (or mv), which is how you rename files. Adding an alias could also help. To do so, run the following:
+A way to remember this is -m is for "move" (or mv), which is also how you rename files. Adding an alias could also help. To do so, run the following:
 ```bash
 git config --global alias.rename 'branch -m'
 ```
