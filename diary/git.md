@@ -4,6 +4,12 @@ title: Git
 permalink: /diary/git
 ---
 
+## Handy aliases
+Make an alias for add and commit (and make the message in vim)
+```bash
+git config --global alias.ac '!git add -A && git commit'
+```
+
 ## Reset your local repo to the remote and overwrite changes
 
 ```Git
