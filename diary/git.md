@@ -92,7 +92,7 @@ git --no-pager <your command> # for each command
 1. Exelent [book](https://www.git-tower.com/learn/git/ebook) from [Tower](https://www.git-tower.com) about learning GIT and there are some videos also
 
 ## Renaming branches
-If you want to rename a branch while pointed to any branch, do:
+If you want to rename a branch while pointing to any branch, do:
 ```bash
 git branch -m <oldname> <newname>
 ```
