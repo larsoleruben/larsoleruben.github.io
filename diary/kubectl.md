@@ -132,22 +132,7 @@ kubectl apply -f my-yaml-deployment.yaml
 kubectl apply --dry-run=server my-yaml-deployment.yaml
 ```
 
-## Build a container with a tag for some registry in azure.
-The domain has to be part of the name
 
-```bash
-docker build -t myregname.azurecr.io/cfdmails:1.006 .
-```
-## Run above created image locally with the appconfig folder mounted (similar to a mounted secret)
-
-You need to have a folder in root with the name kvsecrets and it should contain the appconfig.json file
-
-```bash
- docker run -d \
-  --name cfdmails \
-  --mount type=bind,source="$(pwd)"/kvsecrets,target=/kvsecrets \
-  myregname.azurecr.io/cfdmails:1.006
-```
 ## Some useful Links
 [A page with most CLI commands](https://kubernetes.io/docs/reference/kubectl/cheatsheet/)
 [Kubernetes documentation home](https://kubernetes.io/docs/home/)
