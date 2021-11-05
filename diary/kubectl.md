@@ -3,6 +3,11 @@ layout: page
 title: Kubectl
 permalink: /diary/kubectl
 ---
+
+## Scale all deployments in a namespace in one go
+```bash
+kubectl scale deploy -n <namespace> --replicas=0 --all
+```
 ## Make a secret for your private repository.
 This will enable you to use an image in in i.e. Azure, AWS or Google in any other K8 cluster:
 
