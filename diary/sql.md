@@ -457,4 +457,6 @@ ALTER DATABASE SCOPED CONFIGURATION SET MAXDOP = 8
 ## Find space used
 ```sql
 EXEC sp_spaceused;
+--or for an object
+EXEC sp_spaceused N'schema.object_name';
 ```
