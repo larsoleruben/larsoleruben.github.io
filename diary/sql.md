@@ -453,3 +453,8 @@ GO
 --Change the setting
 ALTER DATABASE SCOPED CONFIGURATION SET MAXDOP = 8
 ```
+
+## Find space used
+```sql
+EXEC sp_spaceused;
+```
