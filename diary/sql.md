@@ -445,7 +445,7 @@ ORDER BY cplan.usecounts DESC
 ```
 
 ## Error 845
-This error could be due to deadlocks and can be remided by setting it to [another value than 0](https://protect2.fireeye.com/v1/url?k=31323334-501d5122-fe22d327-454445555731-a2c730dadeb4ff8c&q=1&e=d2e7866e-498b-4488-b685-c24bb34c5ed7&u=https%3A%2F%2Fdocs.microsoft.com%2Fen-us%2Fazure%2Fazure-sql%2Fdatabase%2Fconfigure-max-degree-of-parallelism%23overview)
+This error could be due to deadlocks and can be fixed by setting it to [another value than 0](https://protect2.fireeye.com/v1/url?k=31323334-501d5122-fe22d327-454445555731-a2c730dadeb4ff8c&q=1&e=d2e7866e-498b-4488-b685-c24bb34c5ed7&u=https%3A%2F%2Fdocs.microsoft.com%2Fen-us%2Fazure%2Fazure-sql%2Fdatabase%2Fconfigure-max-degree-of-parallelism%23overview)
 ```sql
 --se the current setting
 SELECT [value] FROM sys.database_scoped_configurations WHERE [name] = 'MAXDOP';
