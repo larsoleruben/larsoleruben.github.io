@@ -67,3 +67,9 @@ def main(file_length):
 if __name__ == "__main__":
     main(1500000)
 ```
+
+## How to clean you python installation for all pakages
+
+```bash
+pip freeze | xargs pip uninstall -y
+```
