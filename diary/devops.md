@@ -3,7 +3,7 @@ layout: page
 title: DevOps
 permalink: /diary/devops
 ---
-## Using azure private artifacts
+## Getting an Error Using azure private artifacts
 This will stop you pulling your hair out and stop you going insane!!
 Somehow the f..... keyring was suppose to do it for you, but intermittently it fails completely.
 So azure DevOps asks you for your credentials and you happily type username and password in, only to see error something like this:
