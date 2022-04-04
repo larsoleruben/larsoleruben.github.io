@@ -12,3 +12,11 @@ export EDITOR="code -w"
 export EDITOR="nano"
 ```
 If you want it permanently you have to add it to .zprofile (I asume)
+
+## Stop and start you network adapter on a Mac
+```zsh
+# Will show you which adaptors are active
+ifconfig -a
+sudo ifconfig en0 down
+sudo ifconfig en0 up
+```

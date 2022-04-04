@@ -8,6 +8,12 @@ permalink: /diary/python
 python3 -m venv /path/to/new/virtual/environment
 ```
 
+## Where is my pip.conf?
+Find the places where pip will look for a conf (PS in virtual env its in the root of the wirtual env)
+```bash
+pip config list -v
+```
+
 ## Using weaitress WSGI to launch a flask app:
 ```cmd
 waitress-serve --port=8000 --host=0.0.0.0 --call 'mymodule:create_app'
