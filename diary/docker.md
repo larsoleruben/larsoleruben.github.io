@@ -55,3 +55,17 @@ You need to have a folder in root with the name kvsecrets and it should contain 
 This can be done in several ways, but say you have a database running in docker and your scripts uses "localhost" to access it from another container, it will not work.
 Instead of "localhost" you have to use "host.docker.internal" and it will workd again.
 See mere [here](https://docs.docker.com/desktop/mac/networking/)
+
+## The nightmare of building dockerfile with "PIP_EXTRA_INDEX_URL"
+Ok, here is some really good info. How to read the azure artifacts when building a dockerfile, containing "PIP_EXTRA_INDEX_URL"
+This will give the image user the necessary rights to get your artifacts from Azure DevOps.
+Remember the passworkd is your Token for artefacts, which you have to get from you account in azure devops.
+```docker
+ARG USER
+ARG PASS
+RUN echo "machine your.pkgs.visualstudio.com \
+          "    login ${USER} \
+          "    password ${PASS}" > /root/.netrc
+ RUN chown root ~/.netrc
+ RUN chmod 0600 ~/.netrc
+```
