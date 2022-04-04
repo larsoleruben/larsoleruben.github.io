@@ -50,3 +50,8 @@ You need to have a folder in root with the name kvsecrets and it should contain 
   --mount type=bind,source="$(pwd)"/kvsecrets,target=/kvsecrets \
   myregname.azurecr.io/cfdmails:1.006
 ```
+
+## I want to connect from a container to a service on the host (maybe also running in Docker)
+This can be done in several ways, but say you have a database running in docker and your scripts uses "localhost" to access it from another container, it will not work.
+Instead of "localhost" you have to use "host.docker.internal" and it will workd again.
+See mere [here](https://docs.docker.com/desktop/mac/networking/)
