@@ -20,6 +20,7 @@ ln -s $(brew --prefix)/Cellar/openssl@1.1/$version $(brew --prefix)/opt/openssl
 ```
 Want to know more about that annoying failure and bug go to [here](https://docs.microsoft.com/en-us/sql/connect/odbc/linux-mac/known-issues-in-this-version-of-the-driver?view=sql-server-ver15#connectivity)
 Also the say it has been fixed in driver 17.9+, but I installed 18 and had exactly the same problem.
+And how to [install](https://docs.microsoft.com/en-us/sql/connect/odbc/linux-mac/install-microsoft-odbc-driver-sql-server-macos?view=sql-server-ver15) the drivers!
 ## Making a virtual environment
 ```bash
 python3 -m venv /path/to/new/virtual/environment
