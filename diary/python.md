@@ -3,6 +3,23 @@ layout: page
 title: Python
 permalink: /diary/python
 ---
+
+## When your pyodbc on you MACOS stops working after an update and you have no idea why
+This is horrifying scenario. You are developing in Python on a mac and everything you run needs acces to a database. And out of nowhere, your PYODBC package can't load the driver. You see errors like this:
+```bash
+isql -v -k '<your connection string>'
+[08001][Microsoft][ODBC Driver 17 for SQL Server]SSL Provider: [OpenSSL library could not be loaded, make sure OpenSSL 1.0 or 1.1 is installed]
+[08001][Microsoft][ODBC Driver 17 for SQL Server]Client unable to establish connection (0) (SQLDriverConnect)
+```
+And you have no idea why. Well that is a build in error from Microsoft, which is only present in python.
+And here is what you should do, to get it working again:
+```bash
+rm -rf $(brew --prefix)/opt/openssl
+version=$(ls $(brew --prefix)/Cellar/openssl@1.1 | grep "1.1")
+ln -s $(brew --prefix)/Cellar/openssl@1.1/$version $(brew --prefix)/opt/openssl
+```
+Want to know more about that annoying failure and bug go to [here](https://docs.microsoft.com/en-us/sql/connect/odbc/linux-mac/known-issues-in-this-version-of-the-driver?view=sql-server-ver15#connectivity)
+Also the say it has been fixed in driver 17.9+, but I installed 18 and had exactly the same problem.
 ## Making a virtual environment
 ```bash
 python3 -m venv /path/to/new/virtual/environment
