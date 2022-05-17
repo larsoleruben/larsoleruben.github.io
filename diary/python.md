@@ -4,6 +4,12 @@ title: Python
 permalink: /diary/python
 ---
 
+## Using "extra-index-url" and not having to deal with azure errors
+Just use the URL as argument for pip like this:
+```bash
+pip install -r requirements.txt --extra-index-url https://user@domain.com:your_personal_access_token@url_to_private_packages/
+```
+
 ## When your pyodbc on you MACOS stops working after an update and you have no idea why
 This is horrifying scenario. You are developing in Python on a mac and everything you run needs acces to a database. And out of nowhere, your PYODBC package can't load the driver. You see errors like this:
 ```bash
