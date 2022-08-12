@@ -35,8 +35,13 @@ Fortunatly there is a very good small [python script for that](https://github.co
 ## Switch to another context, which is in your ~/.kube/config file
 You can find the names in the ~/.kube/config file.
 ```bash
-kubectl config use-context my-cluster-name
+kubectl config use-context my-context-name
 ```
+## Set the context manually
+```bash
+kubectl config set-context my-context-name
+```
+
 
 ## Autocomplete in bash
 ```bash
