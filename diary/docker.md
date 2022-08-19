@@ -11,7 +11,7 @@ docker build -t my-registry.azurecr.io/image-name:1.0.0 .
 ```
 ## Push your image to some registry repository in azure cloud or elsewhere
 WARNING! Using --password via the CLI is insecure. Use --password-stdin.
-WARNING! Your password will be stored unencrypted in /home/laoch/.docker/config.json.
+WARNING! Your password will be stored unencrypted in /home/some-user/.docker/config.json.
 Configure a credential helper to remove this warning. [See this](
 https://docs.docker.com/engine/reference/commandline/login/#credentials-store)
 PS: The namespace (whatever is before the /) must be the same as the registry url, or it will not get pushed. Took me a few hours to figure that out :-)
@@ -19,6 +19,18 @@ PS: The namespace (whatever is before the /) must be the same as the registry ur
 docker login registry-url -u username -p password
 docker push my-registry.azurecr.io/image-name:1.0.0
 ```
+
+## Run above created image locally with the appconfig folder mounted (similar to a mounted secret)
+
+You need to have a folder in root of the project with the name kvsecrets and it should contain the appconfig.json file
+
+```bash
+ docker run -d \
+  --name my-container-name \
+  --mount type=bind,source="$(pwd)"/kvsecrets,target=/kvsecrets \
+  myregname.azurecr.io/cfdmails:1.0.0
+```
+
 ## Install docker on ubuntu cook book
 There is straight forward no nonsence [cookbook](https://docs.docker.com/engine/install/ubuntu/) here
 
@@ -27,28 +39,11 @@ There is straight forward no nonsence [cookbook](https://docs.docker.com/engine/
 docker run --rm -it ubuntu /bin/bash
 ```
 ## Kill a container that is running
-PS: You'll only need the first 3 characters from them ID to kill it.
+PS: You'll only need the first 3 characters from the ID to kill it.
 ```bash
 docker container ls
 # this will reveal all the containers running and their ID's or names
 docker container stop container_id or name
-```
-
-## Build a container with a tag for some registry in azure.
-The domain has to be part of the name
-
-```bash
-docker build -t myregname.azurecr.io/cfdmails:1.006 .
-```
-## Run above created image locally with the appconfig folder mounted (similar to a mounted secret)
-
-You need to have a folder in root with the name kvsecrets and it should contain the appconfig.json file
-
-```bash
- docker run -d \
-  --name cfdmails \
-  --mount type=bind,source="$(pwd)"/kvsecrets,target=/kvsecrets \
-  myregname.azurecr.io/cfdmails:1.006
 ```
 
 ## I want to connect from a container to a service on the host (maybe also running in Docker)
