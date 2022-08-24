@@ -460,3 +460,19 @@ EXEC sp_spaceused;
 --or for an object
 EXEC sp_spaceused N'schema.object_name';
 ```
+
+## How to check if schema exists on sql server and create it if not
+It turns out that a CREATE SCHEMA needs to be a first command in a batch and cannot be wrapped in an if statement.  So a little work around is needed.
+
+```sql
+IF NOT EXISTS (
+SELECT  schema_name
+FROM    information_schema.schemata
+WHERE   schema_name = 'ARCHIVE' ) -- ARCHIVE is the name of the schema I wanted to check for
+
+BEGIN
+EXEC sp_executesql N'CREATE SCHEMA ARCHIVE'   --ARCHIVE is the schema I want to create
+END
+GO
+```
+Thanks to this [Garry Woodfine](https://garywoodfine.com) on this exelent [website](https://garywoodfine.com/check-if-schema-exists-in-sql-server-database/)
