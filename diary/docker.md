@@ -68,3 +68,8 @@ Or you can do like this with the extra index url is:
 ```bash
 --build-arg PIP_EXTRA_INDEX_URL= https://your_initials:your_secret_token@your_server.pkgs.visualstudio.com/your_project/_packaging/obs-cm/pypi/simple/
 ```
+
+## login to an Azure container regostry
+```zsh
+az acr login --name <acrName>
+```
