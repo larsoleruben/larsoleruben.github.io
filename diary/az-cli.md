@@ -45,6 +45,6 @@ az aks get-credentials --name MyManagedCluster --resource-group MyResourceGroup
 ```
 
 ## Login to an Azure Container Registry
-```bash
+```zsh
 az acr -n your_registry_name
 ```
