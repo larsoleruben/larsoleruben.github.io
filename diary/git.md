@@ -121,3 +121,17 @@ git config --global alias.rename 'branch -m'
 git fetch origin
 git reset --hard origin/branch-name
 ```
+
+## What is the meaning of GIT info signs
+|   Symbol   	|   meaning
+|---	|---
+|   *	|   unstaged
+|   +	|   staged
+|   $	|   stash
+|   %	|   untracked files
+|   <	|   behind
+|   >	|   ahead
+|   <>	|   diverged
+|   =	|   no difference
+|   \|	|   operation in progress
+|   ?	|   sparse checkout
