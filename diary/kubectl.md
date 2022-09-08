@@ -142,6 +142,15 @@ kubectl apply -f my-yaml-deployment.yaml
 kubectl apply --dry-run=server my-yaml-deployment.yaml
 ```
 
+## Delete unused contexts from the config file
+```kubectl config``` unset takes a dot-delimited path. You can delete cluster/context/user entries by name. E.g.
+```bash
+kubectl config unset users.gke_project_zone_name
+
+kubectl config unset contexts.aws_cluster1-kubernetes
+
+kubectl config unset clusters.foobar-baz
+```
 
 ## Some useful Links
 [A page with most CLI commands](https://kubernetes.io/docs/reference/kubectl/cheatsheet/)

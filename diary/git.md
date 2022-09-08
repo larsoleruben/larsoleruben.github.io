@@ -135,3 +135,8 @@ git reset --hard origin/branch-name
 |   =	|   no difference
 |   \|	|   operation in progress
 |   ?	|   sparse checkout
+
+## Git with oh-my-zsh
+Very informative web page can be found [here](https://kapeli.com/cheat_sheets/Oh-My-Zsh_Git.docset/Contents/Resources/Documents/index)
+
+e
