@@ -152,6 +152,17 @@ kubectl config unset contexts.aws_cluster1-kubernetes
 kubectl config unset clusters.foobar-baz
 ```
 
+## Delete configmaps
+```bash
+# kubectl delete configmap  <configmap-name>  -n  <namespace-name>
+$ kubectl delete configmap    my-cofigmap     -n   namespacename
+```
+Or from yaml
+```bash
+# kubectl delete -f <file-directory> -n <namespace-name>
+$ kubectl delete -f  configmap.yaml  -n  namespacename
+```
+
 ## Some useful Links
 [A page with most CLI commands](https://kubernetes.io/docs/reference/kubectl/cheatsheet/)
 [Kubernetes documentation home](https://kubernetes.io/docs/home/)
