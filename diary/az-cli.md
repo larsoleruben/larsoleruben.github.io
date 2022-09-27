@@ -4,6 +4,11 @@ title: AZ-Cli
 permalink: /diary/az-cli
 ---
 
+## An overview of all the commands from the lates AZ Cli
+
+Go to this [website](https://learn.microsoft.com/en-us/cli/azure/account?view=azure-cli-latest)
+
+
 ## List of your subscrptions
 ```bash
 az account list --output table
