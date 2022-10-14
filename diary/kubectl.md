@@ -32,6 +32,12 @@ kubectl edit secrets mysecret
 ```
 But beware, you then get the secret 64 encoded, and you will have to decode and encode it before updating.
 Fortunatly there is a very good small [python script for that](https://github.com/lbolla/kube-secret-editor), which you can find [here](https://github.com/lbolla/kube-secret-editor)
+
+## Get a list of all contexts
+```bash
+kubectl config get-contexts
+```
+
 ## Switch to another context, which is in your ~/.kube/config file
 You can find the names in the ~/.kube/config file.
 ```bash
