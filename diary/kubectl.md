@@ -169,6 +169,12 @@ Or from yaml
 $ kubectl delete -f  configmap.yaml  -n  namespacename
 ```
 
+## Get a shell in a running container
+Note: The double dash (--) separates the arguments you want to pass to the command from the kubectl arguments.
+```bash
+kubectl exec --stdin --tty shell-demo -- /bin/bash
+```
+
 ## Some useful Links
 [A page with most CLI commands](https://kubernetes.io/docs/reference/kubectl/cheatsheet/)
 [Kubernetes documentation home](https://kubernetes.io/docs/home/)
