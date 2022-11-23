@@ -5,7 +5,7 @@ permalink: /diary/csharp
 ---
 ## Azure Messaging Servicebus Libary
 Using The [Azure.Messaging.ServiceBus](https://github.com/Azure/azure-sdk-for-net/blob/Azure.Messaging.ServiceBus_7.0.1/sdk/servicebus/Azure.Messaging.ServiceBus/README.md) library, NuGet package with retry options
- ```cs
+```cs
  ServiceBusClient client = new ServiceBusClient(serviceBusConnectionString, new ServiceBusClientOptions()
             {
                 RetryOptions = new ServiceBusRetryOptions()
@@ -29,7 +29,7 @@ processor.ProcessMessageAsync += MyMessageHandlerAsync;
 // After the 10th attempt, the message goes to deadletter,
 // which is expected.
 processor.ProcessErrorAsync += MyErrorHandler;
- ```
+```
 
  Here are many more [samples](https://github.com/Azure/azure-sdk-for-net/tree/main/sdk/servicebus/Azure.Messaging.ServiceBus/samples)
 
