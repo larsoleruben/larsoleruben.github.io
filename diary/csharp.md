@@ -1,6 +1,6 @@
 ---
 layout: page
-title: C# (dotnet)
+title: C Sharp (dotnet)
 permalink: /diary/csharp
 ---
  ## Using The [Azure.Messaging.ServiceBus](https://github.com/Azure/azure-sdk-for-net/blob/Azure.Messaging.ServiceBus_7.0.1/sdk/servicebus/Azure.Messaging.ServiceBus/README.md) library, NuGet package with retry options
@@ -46,7 +46,7 @@ dotnet run --urls "http://localhost:5100;https://localhost:5101"
 ```
 
 ### Use URLS
-```C#
+```cs
 public class Program
 {
     public static void Main(string[] args)
