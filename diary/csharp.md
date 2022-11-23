@@ -1,8 +1,9 @@
 ---
 layout: page
-title: C Sharp (dotnet)
+title: C# Sharp (dotnet)
 permalink: /diary/csharp
 ---
+ # C# and .Net tech
  ## Using The [Azure.Messaging.ServiceBus](https://github.com/Azure/azure-sdk-for-net/blob/Azure.Messaging.ServiceBus_7.0.1/sdk/servicebus/Azure.Messaging.ServiceBus/README.md) library, NuGet package with retry options
  ```cs
  ServiceBusClient client = new ServiceBusClient(serviceBusConnectionString, new ServiceBusClientOptions()
