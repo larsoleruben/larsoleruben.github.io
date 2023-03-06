@@ -175,6 +175,17 @@ Note: The double dash (--) separates the arguments you want to pass to the comma
 kubectl exec --stdin --tty shell-demo -- /bin/bash
 ```
 
+## The syntax of Kubectl cp
+Kubectl CP is as simple as a typical Linux CP command. ```kubectl cp <source-file-path> <destination-file-path>```
+
+Here is the syntax to copy a file from local to pod
+```shell
+kubectl cp /<path-to-your-file>/<file-name> <pod-name>:<fully-qualified-file-name> -c <container-name>
+```
+Here is the syntax to copy a file from the pod to local
+```shell
+kubectl cp <pod-name>:<fully-qualified-file-name> /<path-to-your-file>/<file-name> -c <container-name>
+```
 ## Some useful Links
 [A page with most CLI commands](https://kubernetes.io/docs/reference/kubectl/cheatsheet/)
 [Kubernetes documentation home](https://kubernetes.io/docs/home/)

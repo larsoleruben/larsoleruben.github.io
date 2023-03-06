@@ -64,3 +64,7 @@ public class Program
             });
 }
 ```
+### Run project in another folder:
+```shell
+dotnet run --project <path_to_proj_file>
+```
