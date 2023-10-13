@@ -144,33 +144,33 @@ Very informative web page can be found [here](https://kapeli.com/cheat_sheets/Oh
 If you are using both an company account and also would like to use you personal account, you can have both accounts by fllowing these simple steps, by following the instructions [here](https://www.linkedin.com/pulse/multiple-github-accounts-same-mac-hesham-osama/)
 This is a short version
 Make a private/public key using ssh-keygen (feel freee to use any name)
-````shell
+```shell
 ssh-keygen -t rsa -C "email@personal.com" -f "github-personal"
 
 ssh-keygen -t rsa -C "email@company.com" -f "github-company"
-````
+```
 Add the keys to the Agent
-````shell
+```shell
 eval "$(ssh-agent -s)"
 ssh-add --apple-use-keychain ~/.ssh/github-personal
 ssh-add --apple-use-keychain ~/.ssh/github-company
-````
+```
 Add the public keys to your github accounts (PS one at a time)
-````shell
+```shell
 pbcopy < ~/.ssh/github-personal.pub
 
 pbcopy < ~/.ssh/github-company.pub
-````
+```
 Next, go to your GitHub account settings, navigate to "SSH and GPG keys," click "New SSH Key," add a title , paste the public key content into the "Key" field, and save. Repeat this step for all your GitHub accounts.
 
 Configure SSH Alias
-````shell
+```shell
 open ~/.ssh/config
 # or if it does not exists 
 touch ~/.ssh/config
-````
+```
 Add the aliases to the config file
-````shell
+```shell
 Host github.com-personal
    AddKeysToAgent yes
    AddKeysToAgent yes
@@ -184,13 +184,13 @@ Host github.com-company
    HostName github.com
    User git
    IdentityFile ~/.ssh/github-company
-````
+```
 
 Clone and Configure Repositories
-````shell
+```shell
 git clone git@github.com-company:github-company/{repo-name}.git
 git clone git@github.com-personal:github-personal/{repo-name}.git
-````
+```
 **If you have "old repo's" you can get assign them to one of your accounts by going into the .git folder and open the config file and change the url to either git@github.com-company/..... or git@github.com-personal/.....
 Then you don't have to "re-clone" the repo.**
 
