@@ -139,4 +139,5 @@ git reset --hard origin/branch-name
 ## Git with oh-my-zsh
 Very informative web page can be found [here](https://kapeli.com/cheat_sheets/Oh-My-Zsh_Git.docset/Contents/Resources/Documents/index)
 
-e
+## Having more github accounts on your working station
+pass
