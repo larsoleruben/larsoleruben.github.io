@@ -103,3 +103,7 @@ if __name__ == "__main__":
 ```bash
 pip freeze | xargs pip uninstall -y
 ```
+
+## Understanding the Azure Service Bus Lock
+
+I have made a quick [GIST](https://gist.github.com/larsoleruben/44ad1a58007e388010498811aad4d511) for this. The concept is a bit hard to understand, but is actually quite simpel
