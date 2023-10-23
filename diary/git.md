@@ -141,7 +141,7 @@ Very informative web page can be found [here](https://kapeli.com/cheat_sheets/Oh
 
 ## Having more github accounts on your working station
 
-If you are using both an company account and also would like to use you personal account, you can have both accounts by fllowing these simple steps, by following the instructions [here](https://www.linkedin.com/pulse/multiple-github-accounts-same-mac-hesham-osama/)
+If you are using both a company account and also would like to use you personal account, you can have both accounts by following these simple steps or by following the instructions [here](https://www.linkedin.com/pulse/multiple-github-accounts-same-mac-hesham-osama/)
 This is a short version
 Make a private/public key using ssh-keygen (feel freee to use any name)
 ```shell
