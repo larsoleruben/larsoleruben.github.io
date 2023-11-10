@@ -11,7 +11,7 @@ pip install -r requirements.txt --extra-index-url https://user@domain.com:your_p
 ```
 
 ## When your pyodbc on you MACOS stops working after an update and you have no idea why
-This is horrifying scenario. You are developing in Python on a mac and everything you run needs acces to a database. And out of nowhere, your PYODBC package can't load the driver. You see errors like this:
+This error is not comming anymore. This is horrifying scenario. You are developing in Python on a mac and everything you run needs acces to a database. And out of nowhere, your PYODBC package can't load the driver. You see errors like this:
 ```bash
 isql -v -k '<your connection string>'
 [08001][Microsoft][ODBC Driver 17 for SQL Server]SSL Provider: [OpenSSL library could not be loaded, make sure OpenSSL 1.0 or 1.1 is installed]
