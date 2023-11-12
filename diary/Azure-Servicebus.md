@@ -73,6 +73,7 @@ def _process_messages(self, receiver: ServiceBusReceiver):
                 continue
     # This should have been a MessageLockLostError and will catch it after 2 hours
     # As a whole, this exception must be refactored
+    # TODO Refactor this
     except SessionLockLostError:
         self._logger.warning(f"Session with session_id {receiver.session} expired. Closing session")
         self._session_lock_renewer.close()
