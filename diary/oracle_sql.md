@@ -4,6 +4,12 @@ title: Sql (for oracle)
 permalink: /diary/sql-oracle
 ---
 
+## How to get a correct time zone info from a timestamp with no tz info
+
+```SQL 
+to_char((from_tz(cast(PERIOD_START_DTM as timestamp),'UTC') AT TIME ZONE 'Europe/Berlin'),  'YYYY-MM-DD HH24:MI:SS TZH:TZM')
+```
+
 ## Format of time and date in Oracle
 
 |Parameter|	Explanation|
