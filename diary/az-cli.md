@@ -53,3 +53,10 @@ az aks get-credentials --name MyManagedCluster --resource-group MyResourceGroup
 ```zsh
 az acr login --name <acrName>
 ```
+
+## Find which ad groups you are member of
+```zsh
+ az ad user get-member-groups --id user@domain.com --query "[].displayName" -o tsv
+ # or if you want to find a special entry
+  az ad user get-member-groups --id user@domain.com --query "[].displayName" -o tsv | grep xxx
+``````
