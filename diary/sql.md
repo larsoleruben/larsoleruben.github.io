@@ -173,6 +173,15 @@ where ID not in
     from Employee
     group by EmployeeName
 );
+
+--github copilot have yet an smarted 
+WITH CTE AS(
+   SELECT *,
+       ROW_NUMBER() OVER(PARTITION BY product_bid ORDER BY id) AS rn
+   FROM de_offshore.product_bid
+)
+DELETE FROM CTE WHERE rn > 1
+
 ```
 
 ## nvarchar versus varchar
