@@ -110,7 +110,7 @@ I have made a quick [GIST](https://gist.github.com/larsoleruben/44ad1a58007e3880
 
 ## Python Packaging User Guide
 
-A very comprehensive list of using packages and installing them.  
+This is [a very comprehensive list of using packages and installing them](https://packaging.python.org/en/latest/tutorials/installing-packages/#installing-from-a-local-src-tree).  
 To install from a local src tree:
 ```bash
 pip install -e <path> 
