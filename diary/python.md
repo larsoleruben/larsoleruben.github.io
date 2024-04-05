@@ -107,3 +107,12 @@ pip freeze | xargs pip uninstall -y
 ## Understanding the Azure Service Bus Lock
 
 I have made a quick [GIST](https://gist.github.com/larsoleruben/44ad1a58007e388010498811aad4d511) for this. The concept is a bit hard to understand, but is actually quite simpel
+
+## Python Packaging User Guide
+
+A very comprehensive list of using packages and installing them.  
+To install from a local src tree:
+```bash
+pip install -e <path> 
+```
+The -e means editable and can be omitted, if you are not editing the package you are installing.
