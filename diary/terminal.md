@@ -20,3 +20,9 @@ ifconfig -a
 sudo ifconfig en0 down
 sudo ifconfig en0 up
 ```
+
+## Find all zobie processes on your MAC
+```zsh
+ ps -A -ostat,ppid,pid,command | grep -e '^[Zz]'
+```
+And then ps pid to find the parent process 
