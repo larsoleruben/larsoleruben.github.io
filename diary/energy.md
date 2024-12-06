@@ -19,7 +19,7 @@ Equals 75 kg * 9.81 m/s2 x 1 m/s = 736,5 N/sec = 735,75 watt
 ### kWh
 1 kWh = 1000 Wh
 ### NOTE energy and power
-Wh or kWh is ENERGY, while W, kW or HP is power, which is defined at energy transferred per second.
+Wh or kWh is ENERGY, while W, kW or HP is power, which is defined as energy transferred per second.
 
 ### MWh
 1 MWh = 1000000 Wh or 1000 kWh
