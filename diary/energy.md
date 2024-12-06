@@ -27,7 +27,7 @@ Wh or kWh is ENERGY, while W, kW or HP is power, which is defined as energy tran
 ### kW and MW
 1 kW = 1000 Watts and 1 MW = 1000000 Watts
 
-###
+### How many Windturbines to replace a Nuclear plant
 How many 11 MW Windturbines does it take to replace a 1600 MW (1.6 GW) nuclear power plant?  
 Nuclear plant production pr year in GWh = 1.6 x 365 x 3600 x 0.95 = 1997280 GWh
 Windturbine = 11/1000 x 365 x 3600 x 0.35 = 5059 GWh
