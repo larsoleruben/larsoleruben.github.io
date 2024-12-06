@@ -32,5 +32,5 @@ How many 11 MW Windturbines does it take to replace a 1600 MW (1.6 GW) nuclear p
 Nuclear plant production pr year in GWh = 1.6 x 365 x 3600 x 0.95 = 1997280 GWh
 Windturbine = 11/1000 x 365 x 3600 x 0.35 = 5059 GWh
 Number of turbines: 1997280 / 5059 =  395 Windturbines.
-The 0.95 and the 0.35 is the availability number. Since the wind is not constant, it is much lower for the windturbine, than for the nuclear plant, that only need maintenance once a year to replace fuel rods, etc.
+The 0.95 and the 0.35 is the availability number. Since the wind is not constant, it is much lower for the windturbine, than for the nuclear plant, that only needs maintenance once a year to replace fuel rods, etc., but can run at full power the rest of the year, regardless of the weather.
 
