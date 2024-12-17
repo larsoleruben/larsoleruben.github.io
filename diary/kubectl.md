@@ -186,17 +186,17 @@ kubectl cp <pod-name>:<fully-qualified-file-name> /<path-to-your-file>/<file-nam
 
 ### Getting the logs of the previous pod for a deployment
 ```shell
-kubectl logs nginx-7d8b49557c-c2lx9 --previous
+kubectl logs podname --previous
 ```  
 
 ### Getting the logs of a specific container inside a pod
 ````shell
-kubectl logs nginx-7d8b49557c-c2lx9 -c nginx
+kubectl logs podname -c service-name
 ````
 
 ### Get the logs from a crashing container during container init causing crashloopbackoff
 ````shell
-kubectl logs you_pod -c  container_name
+kubectl logs your_podname -c  container_name
 ````
 
 ## Some useful Links
