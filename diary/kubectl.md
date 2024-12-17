@@ -121,11 +121,6 @@ kubectl proxy
 kubectl run -i --rm  --tty busybox --image=busybox --restart=Never -- sh
 ```
 
-## Get the logs from a crashing container during container init causing crashloopbackoff
-```
-kubectl logs you_pod -c  container_name
-```
-
 ## Restart a pod in Kubernerest
 As of kubernetes 1.15, you can now do a rolling restart of all pods for a deployment, so that you don’t take the service down
 ```bash
@@ -185,9 +180,27 @@ kubectl cp /<path-to-your-file>/<file-name> <pod-name>:<fully-qualified-file-nam
 Here is the syntax to copy a file from the pod to local
 ```shell
 kubectl cp <pod-name>:<fully-qualified-file-name> /<path-to-your-file>/<file-name> -c <container-name>
-```
+```  
+
+## Getting logs
+
+### Getting the logs of the previous pod for a deployment
+```shell
+kubectl logs nginx-7d8b49557c-c2lx9 --previous
+```  
+
+### Getting the logs of a specific container inside a pod
+````shell
+kubectl logs nginx-7d8b49557c-c2lx9 -c nginx
+````
+
+### Get the logs from a crashing container during container init causing crashloopbackoff
+````shell
+kubectl logs you_pod -c  container_name
+````
+
 ## Some useful Links
 [A page with most CLI commands](https://kubernetes.io/docs/reference/kubectl/cheatsheet/)
 [Kubernetes documentation home](https://kubernetes.io/docs/home/)
-[Kubernetes secrets in genereal](https://kubernetes.io/docs/concepts/configuration/secret/)
+[Kubernetes secrets in genereal](https://kubernetes.io/docs/concepts/configuration/secret/)  
 
