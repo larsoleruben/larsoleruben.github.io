@@ -6,7 +6,7 @@ permalink: /diary/doc
 
 ## Specification of Energy units
 ### Joule
-1 Joule is the SI unit of work or energy, equal to the work done by a force of one newton when its point of application moves one metre in the direction of action of the force
+1 Joule is the SI unit of work or energy, equal to the work done by a force of one newton when its point of application moves one metre in the direction of action of the force.
 ### Calorie
 A unit of energy equivalent to the heat energy needed to raise the temperature of 1 gram of water by 1 °C (now often defined as equal to 4.1868 joules)
 ### Watt
