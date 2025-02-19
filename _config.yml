@@ -16,10 +16,10 @@
 title: Lars's Engineering Diary
 email: xxxx@yyyyy,com
 description: >- # this means to ignore newlines until "baseurl:"
-  About stuff I do and stuff that I need to remember
-baseurl: "https://lars-ole.rubenc.dk" # the subpath of your site, e.g. /blog
-url: "https://lars-ole.rubenc.dk" # the base hostname & protocol for your site, e.g. http://example.com
-bluesky: "https://bsky.app/profile/lars-ole.rubenc.dk"
+  About stuff I do and stuff that I need to remember.
+baseurl: "" # the subpath of your site, e.g. /blog
+url: "" # the base hostname & protocol for your site, e.g. http://example.com
+twitter_username: f...m...
 github_username: larsoleruben
 
 # Build settings
