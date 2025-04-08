@@ -73,3 +73,10 @@ Or you can do like this with the extra index url is:
 ```zsh
 az acr login --name <acrName>
 ```
+
+## Using docker compose to start and stop
+```zsh
+docker compose -f path/to/docker-compose.yml up -d
+# and stopping. The last v indicates if you want to delete the volume also. If you don't, omit the -v
+docker compose -f path/to/docker-compose.yml -v
+```
