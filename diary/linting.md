@@ -1,6 +1,6 @@
 ---
 layout: page
-title: Lionting
+title: Linting
 permalink: /diary/linting
 ---
 ## Ruff One-off commands
