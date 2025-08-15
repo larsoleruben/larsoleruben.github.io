@@ -17,6 +17,11 @@ git fetch origin
 git reset --hard origin/master
 ```
 
+## Git stash with a name
+```bash
+git stash save "WIP: New feature or what not"
+````
+
 ## The command to list all branches in local and remote repositories is:
 ```git
 git branch -a
