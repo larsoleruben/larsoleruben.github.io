@@ -1,6 +1,6 @@
 ---
 layout: page
-title: CSharp (dotnet)
+title: CSharp
 permalink: /diary/csharp
 ---
 ## Azure Messaging Servicebus Libary
