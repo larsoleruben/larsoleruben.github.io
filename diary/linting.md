@@ -5,19 +5,19 @@ permalink: /diary/linting
 ---
 ## Ruff One-off commands
 ### Lint (no changes)
-ruff check .
+```ruff check .```
 
 ### Lint and auto-fix what it can (imports, simple refactors, etc.)
-ruff check . --fix
+```ruff check . --fix```
 
 ### Format code (Black-like)
-ruff format .
+```ruff format .```
 
 ## #CI-style: fail if formatting is needed
-ruff format --check .
+```ruff format --check .```
 
 ### Typical “clean it up” combo
-ruff check . --fix && ruff format .
+```ruff check . --fix && ruff format .```
 
 ## Project config (pyproject.toml)
 ```toml
